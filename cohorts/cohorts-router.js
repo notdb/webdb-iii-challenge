@@ -38,4 +38,30 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.put("/:id", async (req, res) => {
+  try {
+    const api = await Cohorts.update(req.params.id, req.body);
+
+    if (!req.body.name) {
+      res.status(400).json({ message: "please add a name" });
+    } else {
+      res.status(200).json(api);
+    }
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
+router.delete("/:id", async (req, res) => {
+  try {
+    const cohort = await Cohorts.order66(req.params.id);
+    res.status(200).json(cohort);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({
+      message: "error deleting account"
+    });
+  }
+});
+
 module.exports = router;

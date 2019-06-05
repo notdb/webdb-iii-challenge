@@ -47,6 +47,8 @@ server.post("/api/cohorts", async (req, res) => {
   }
 });
 */
+
+/*
 server.put("/api/cohorts/:id", async (req, res) => {
   try {
     const count = await db("cohorts")
@@ -65,7 +67,7 @@ server.put("/api/cohorts/:id", async (req, res) => {
     res.status(500).json(error);
   }
 });
-
+*/
 server.delete("/api/cohorts/:id", async (req, res) => {
   try {
     const count = await db("cohorts")

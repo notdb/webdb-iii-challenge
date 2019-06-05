@@ -7,7 +7,9 @@ const db = knex(knexConfig.development);
 module.exports = {
   find,
   findStudentById,
-  add
+  add,
+  update,
+  order66
 };
 
 function find() {
@@ -22,4 +24,16 @@ function findStudentById(id) {
 
 function add(cohort) {
   return find().insert(cohort);
+}
+
+function update(id, changes) {
+  return find()
+    .where({ id })
+    .update(changes, "*");
+}
+
+function order66(id) {
+  return find()
+    .where({ id })
+    .del();
 }
