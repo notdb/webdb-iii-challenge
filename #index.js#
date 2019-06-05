@@ -21,6 +21,7 @@ server.get("/api/cohorts", async (req, res) => {
   }
 });
 */
+/*
 server.get("/api/cohorts/:id/students", async (req, res) => {
   try {
     const cohorts = await db("students")
@@ -31,7 +32,8 @@ server.get("/api/cohorts/:id/students", async (req, res) => {
     res.status(500).json(error);
   }
 });
-
+*/
+/*
 server.post("/api/cohorts", async (req, res) => {
   try {
     const [id] = await db("cohorts").insert(req.body);
@@ -44,7 +46,7 @@ server.post("/api/cohorts", async (req, res) => {
     res.status(500).json({ message, error });
   }
 });
-
+*/
 server.put("/api/cohorts/:id", async (req, res) => {
   try {
     const count = await db("cohorts")

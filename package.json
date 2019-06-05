@@ -4,7 +4,7 @@
   "description": "- Databases\r - Relational Databases\r - Knex migrations.\r - Seeding data.",
   "main": "index.js",
   "scripts": {
-      "server": "nodemon index.js"
+    "server": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
     "sqlite3": "^4.0.8"
   },
   "devDependencies": {
+    "knex-cleaner": "^1.1.4",
     "nodemon": "^1.19.1"
   }
 }
